@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ash_light_shade"
+    tools:context=".views.fragments.SubjectDetailsFragment"
+    tools:ignore="SpUsage">
+
+
+    <ImageView
+        android:id="@+id/upButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_24"
+        android:contentDescription="@string/go_back"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subjectOverHeadTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:fontFamily="@font/mulish"
+        android:padding="@dimen/dp_8"
+        android:text="@string/mathematics"
+        android:textColor="@color/ash_dark_shade"
+        android:textSize="@dimen/dp_16"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/upButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/upButton"
+        app:layout_constraintTop_toTopOf="@+id/upButton" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/subjectListRecyclewView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subjectOverHeadTitle"
+        tools:listitem="@layout/subject_detail_list_items" />
+
+    <include
+        android:id="@+id/detailsLoader"
+        layout="@layout/loader"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

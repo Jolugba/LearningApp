@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">LearningApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_simbi">Hello Simbi</string>
+    <string name="recently_watched_topics">Recently watched topics</string>
+    <string name="view_all">View all</string>
+    <string name="mathematics">Mathematics</string>
+    <string name="subjectimage">subjectImage</string>
+    <string name="go_back">go back</string>
+    <string name="hydrocarbon">Hydrocarbon</string>
 </resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dashboard_background"
+    tools:context=".views.fragments.DashBoardFragment"
+    tools:ignore="SpUsage">
+
+    <TextView
+        android:id="@+id/introName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:fontFamily="@font/itim"
+        android:text="@string/hello_simbi"
+        android:textColor="@color/ash_dark_shade"
+        android:textSize="@dimen/dp_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/subjectRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/recentlyWatchedIntroTexts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/introName"
+        app:spanCount="2"
+        tools:listitem="@layout/subject_list_items" />
+
+    <TextView
+        android:id="@+id/recentlyWatchedIntroTexts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:fontFamily="@font/itim"
+        android:text="@string/recently_watched_topics"
+        android:textColor="@color/ash_dark_shade"
+        android:textSize="@dimen/dp_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subjectRecyclerView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recentlyWatchedVideoRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@+id/viewAllView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recentlyWatchedIntroTexts"
+        tools:listitem="@layout/recent_watched_list_items" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/viewAllView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:foreground="?android:selectableItemBackground"
+        app:cardCornerRadius="@dimen/dp_8"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recentlyWatchedVideoRecyclerView"
+        app:rippleColor="@color/teal_200">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/view_all_button_background"
+            android:fontFamily="@font/mulish"
+            android:gravity="center"
+            android:text="@string/view_all"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <include
+        android:id="@+id/appLoader"
+        layout="@layout/loader" />
+</androidx.constraintlayout.widget.ConstraintLayout>
