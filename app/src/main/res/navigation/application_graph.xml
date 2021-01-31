@@ -9,5 +9,23 @@
         android:id="@+id/dashBoardFragment"
         android:name="com.tinuade.learningapp.views.fragments.DashBoardFragment"
         android:label="fragment_dash_board"
-        tools:layout="@layout/fragment_dash_board" />
+        tools:layout="@layout/fragment_dash_board">
+        <action
+            android:id="@+id/action_dashBoardFragment_to_subjectDetailsFragment"
+            app:destination="@id/subjectDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectDetailsFragment"
+        android:name="com.tinuade.learningapp.views.fragments.SubjectDetailsFragment"
+        android:label="fragment_subject_details"
+        tools:layout="@layout/fragment_subject_details">
+        <action
+            android:id="@+id/action_subjectDetailsFragment_to_playLessonFragment"
+            app:destination="@id/playLessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playLessonFragment"
+        android:name="com.tinuade.learningapp.views.fragments.PlayLessonFragment"
+        android:label="fragment_play_lesson"
+        tools:layout="@layout/fragment_play_lesson" />
 </navigation>

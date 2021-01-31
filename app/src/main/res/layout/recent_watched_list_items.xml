@@ -52,4 +52,15 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.35"
         app:layout_constraintStart_toEndOf="@id/videoImage" />
+
+    <ImageView
+        android:id="@+id/recentlyWatchedPlayButon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/videoImage"
+        app:layout_constraintEnd_toEndOf="@id/videoImage"
+        app:layout_constraintStart_toStartOf="@id/videoImage"
+        app:layout_constraintTop_toTopOf="@id/videoImage"
+        app:srcCompat="@drawable/ic_play_control"
+        tools:ignore="ContentDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

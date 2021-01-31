@@ -9,4 +9,7 @@
     <string name="subjectimage">subjectImage</string>
     <string name="go_back">go back</string>
     <string name="hydrocarbon">Hydrocarbon</string>
+    <string name="rewind_video">Rewind video</string>
+    <string name="pause_video">pause video</string>
+    <string name="fast_forward_video">fast Forward Video</string>
 </resources>

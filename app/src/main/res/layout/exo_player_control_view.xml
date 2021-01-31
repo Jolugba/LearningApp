@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/controlLyaout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ash_dark_shade">
+
+    <ImageView
+        android:id="@+id/rewindControl"
+        style="@style/ExoMediaButton.Rewind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/rewind_video"
+        app:srcCompat="@drawable/ic_backward_control" />
+
+    <ImageView
+        android:id="@+id/pauseControl"
+        style="@style/ExoMediaButton.Pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/pause_video"
+        app:srcCompat="@drawable/ic_pause" />
+
+    <ImageView
+        android:id="@+id/playControl"
+        style="@style/ExoMediaButton.Play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_play_control"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/fastForwardControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/fast_forward_video"
+        app:srcCompat="@drawable/ic_forward_control" />
+</FrameLayout>
