@@ -11,10 +11,10 @@ import com.tinuade.learningapp.data.entities.Subject
 interface SubjectsDao {
 
     @Query("SELECT * FROM Subject WHERE id = :id")
-    fun getSubject(id: Int): LiveData<Subject>
+    fun getSubject(id: Long): Subject
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAllSubjects(subject: List<Subject>?)
+    suspend fun insertAllSubjects(subject: List<Subject>)
 
     @Query("select * from SUBJECT")
     fun fetchAllSubjects(): LiveData<List<Subject>>

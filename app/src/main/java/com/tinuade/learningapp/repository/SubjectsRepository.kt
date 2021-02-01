@@ -12,9 +12,8 @@ class SubjectsRepository @Inject constructor(
 
     fun getSubjects() = performGetOperation(
         databaseQuery = { subjectsDao.fetchAllSubjects() },
-        networkCall = { remoteDataSource.getSubject() },
-        saveCallResult = { subjectsDao.insertAllSubjects(it.subjects) }
-    )
+        networkCall = { remoteDataSource.getSubject() }
+    ) { subjectsDao.insertAllSubjects(it.data.subjects) }
 
 
 }

@@ -60,7 +60,6 @@ class SubjectFragment : Fragment(), SubjectsAdapter.SubjectClickedListener {
                 Resources.Status.SUCCESS -> {
                     appLoader.hide()
                     if (!it.data.isNullOrEmpty()) adapter.setListItems(ArrayList(it.data))
-                    else subjectRecyclerView.showMessage(Message(it.message!!, true))
                 }
                 Resources.Status.ERROR -> {
                     subjectRecyclerView.showMessage(Message(it.message!!, true))
