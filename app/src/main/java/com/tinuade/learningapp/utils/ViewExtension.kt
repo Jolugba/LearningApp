@@ -26,12 +26,11 @@ object ViewExtension {
     }
 
     fun View.showMessage(message: Message) {
+        val snackbar = Snackbar.make(this, message.message, Snackbar.LENGTH_LONG)
         if (message.isError) {
-            val snackbar = Snackbar.make(this, message.message, Snackbar.LENGTH_INDEFINITE)
             snackbar.setBackgroundTint(ContextCompat.getColor(this.context, R.color.red))
             snackbar.show()
         } else {
-            val snackbar = Snackbar.make(this, message.message, Snackbar.LENGTH_LONG)
             snackbar.setBackgroundTint(
                 ContextCompat.getColor(
                     this.context,

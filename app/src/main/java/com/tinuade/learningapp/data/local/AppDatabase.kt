@@ -5,6 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.tinuade.learningapp.data.entities.Chapter
 import com.tinuade.learningapp.data.entities.Lesson
+import com.tinuade.learningapp.data.entities.RecentlyWatchedVideos
 import com.tinuade.learningapp.data.entities.Subject
 import com.tinuade.learningapp.data.local.dao.ChapterDao
 import com.tinuade.learningapp.data.local.dao.RecentlyWatchedVideosDao
@@ -12,8 +13,8 @@ import com.tinuade.learningapp.data.local.dao.SubjectsDao
 import com.tinuade.learningapp.data.local.dao.VideoLessonsDao
 
 @Database(
-    entities = [Chapter::class, Lesson::class, Subject::class],
-    version = 1,
+    entities = [Chapter::class, Lesson::class, Subject::class, RecentlyWatchedVideos::class],
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(AppTypeConverter::class)

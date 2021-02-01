@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.tinuade.learningapp.R
-import com.tinuade.learningapp.adapters.SubjectsAdapter
 import com.tinuade.learningapp.data.entities.Subject
+import com.tinuade.learningapp.utils.AppConstants.SUBJECT
 import com.tinuade.learningapp.utils.Message
 import com.tinuade.learningapp.utils.Resources
 import com.tinuade.learningapp.utils.ViewExtension.hide
@@ -24,6 +26,7 @@ class SubjectFragment : Fragment(), SubjectsAdapter.SubjectClickedListener {
     @VisibleForTesting
     private val subjectViewModel: SubjectViewModel by viewModels()
     private lateinit var adapter: SubjectsAdapter
+    private lateinit var recentViewAdapter: RecentlyWatchedAdapter
 
     companion object {
         @JvmStatic
@@ -42,8 +45,11 @@ class SubjectFragment : Fragment(), SubjectsAdapter.SubjectClickedListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        recentViewAdapter = RecentlyWatchedAdapter()
+        buttonBehaviour()
         setupRecyclerView()
         setUpObserver()
+        subjectViewModel.buttonBehaviour(viewALLText.text.toString())
     }
 
     private fun setupRecyclerView() {
@@ -54,8 +60,14 @@ class SubjectFragment : Fragment(), SubjectsAdapter.SubjectClickedListener {
         subjectRecyclerView.adapter = adapter
     }
 
+    private fun buttonBehaviour() {
+        viewAllView.setOnClickListener {
+            subjectViewModel.buttonBehaviour(viewALLText.text.toString())
+        }
+    }
+
     private fun setUpObserver() {
-        subjectViewModel.characters.observe(viewLifecycleOwner, {
+        subjectViewModel.subject.observe(viewLifecycleOwner, {
             when (it.status) {
                 Resources.Status.SUCCESS -> {
                     appLoader.hide()
@@ -69,11 +81,34 @@ class SubjectFragment : Fragment(), SubjectsAdapter.SubjectClickedListener {
                     appLoader.show()
             }
         })
+
+
+        subjectViewModel.recentWatchVideos.observe(viewLifecycleOwner, Observer {
+            if (it.isNotEmpty()) {
+                recentEmptyStateText.show()
+                viewAllView.hide()
+            }
+
+            recentViewAdapter.setListItems(it)
+        })
+
+        subjectViewModel._buttonText.observe(viewLifecycleOwner, Observer {
+            viewALLText.text = it
+        })
     }
 
+
     override fun onSubjectClicked(view: View, item: Subject) {
-        subjectRecyclerView.showMessage(Message("welcome", false))
+        val bundle = Bundle()
+        bundle.putParcelable(SUBJECT, item)
+        //navigate to subject detail page showing all
+        findNavController().navigate(
+            R.id.action_dashBoardFragment_to_subjectDetailsFragment,
+            bundle
+        )
     }
+
+
 
 
 }

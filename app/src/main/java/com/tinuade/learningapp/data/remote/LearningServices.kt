@@ -1,6 +1,6 @@
 package com.tinuade.learningapp.data.remote
 
-import com.tinuade.learningapp.data.LearningApiResponse
+import com.tinuade.learningapp.data.entities.LearningApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

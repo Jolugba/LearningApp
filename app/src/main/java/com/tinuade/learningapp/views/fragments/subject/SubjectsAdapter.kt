@@ -1,4 +1,4 @@
-package com.tinuade.learningapp.adapters
+package com.tinuade.learningapp.views.fragments.subject
 
 import android.view.LayoutInflater
 import android.view.View
