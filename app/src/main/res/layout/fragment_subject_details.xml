@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ash_light_shade"
-    tools:context=".views.fragments.SubjectDetailsFragment"
+    tools:context=".views.fragments.subjectdetails.SubjectDetailsFragment"
     tools:ignore="SpUsage">
 
 

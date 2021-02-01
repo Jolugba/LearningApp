@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/dashBoardFragment"
-        android:name="com.tinuade.learningapp.views.fragments.DashBoardFragment"
+        android:name="com.tinuade.learningapp.views.fragments.subject.SubjectFragment"
         android:label="fragment_dash_board"
         tools:layout="@layout/fragment_dash_board">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/subjectDetailsFragment"
-        android:name="com.tinuade.learningapp.views.fragments.SubjectDetailsFragment"
+        android:name="com.tinuade.learningapp.views.fragments.subjectdetails.SubjectDetailsFragment"
         android:label="fragment_subject_details"
         tools:layout="@layout/fragment_subject_details">
         <action

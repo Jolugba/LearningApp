@@ -2,9 +2,10 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-       id 'dagger.hilt.android.plugin'
+    id 'kotlin-android-extensions'
+    id 'dagger.hilt.android.plugin'
     id "org.jlleitschuh.gradle.ktlint" version "9.4.1"
-   }
+}
 android {
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion "30.0.2"
@@ -29,6 +30,7 @@ android {
     buildFeatures {
                viewBinding = true
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -74,14 +76,18 @@ dependencies {
 
     //logging interceptor
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpLoggingVersion"
-    // retrofit v2
+
+    // network
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.github.skydoves:sandwich:$rootProject.sandwichVersion"
+    implementation "com.github.skydoves:whatif:$rootProject.whatIfVersion"
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
     //Dagger-Hilt
     implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
+  //  implementation "androidx.hilt:hilt-common:$rootProject.hiltVersion"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.hiltViewModelVersion"
     kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
     kapt "androidx.hilt:hilt-compiler:$rootProject.hiltViewModelVersion"

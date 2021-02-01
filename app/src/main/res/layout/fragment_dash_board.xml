@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dashboard_background"
-    tools:context=".views.fragments.DashBoardFragment"
+    tools:context=".views.fragments.subject.SubjectFragment"
     tools:ignore="SpUsage">
 
     <TextView
@@ -33,7 +33,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/recentlyWatchedIntroTexts"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.36"
+        app:layout_constraintHeight_percent="0.38"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/introName"
         app:spanCount="2"
@@ -63,6 +63,7 @@
         android:layout_marginEnd="@dimen/dp_16"
         android:layout_marginBottom="@dimen/dp_8"
         android:overScrollMode="never"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/viewAllView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.3"
@@ -79,6 +80,7 @@
         android:layout_marginEnd="@dimen/dp_16"
         android:foreground="?android:selectableItemBackground"
         app:cardCornerRadius="@dimen/dp_8"
+        android:visibility="gone"
         app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,4 +103,17 @@
     <include
         android:id="@+id/appLoader"
         layout="@layout/loader" />
+
+    <TextView
+        android:id="@+id/recentEmptyStateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mulish"
+        android:text="@string/you_have_not_watched_any_video_yet"
+        android:textColor="@color/ash_dark_shade"
+        android:textSize="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recentlyWatchedIntroTexts" />
 </androidx.constraintlayout.widget.ConstraintLayout>

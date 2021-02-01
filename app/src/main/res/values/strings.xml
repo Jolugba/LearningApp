@@ -12,4 +12,5 @@
     <string name="rewind_video">Rewind video</string>
     <string name="pause_video">pause video</string>
     <string name="fast_forward_video">fast Forward Video</string>
+    <string name="you_have_not_watched_any_video_yet">You have not watched any Video yet</string>
 </resources>
