@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/application_graph"
+    app:startDestination="@id/dashBoardFragment">
+
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.tinuade.learningapp.views.fragments.subject.SubjectFragment"
+        android:label="fragment_dash_board"
+        tools:layout="@layout/fragment_dash_board">
+        <action
+            android:id="@+id/action_dashBoardFragment_to_subjectDetailsFragment"
+            app:destination="@id/subjectDetailsFragment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/slide_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectDetailsFragment"
+        android:name="com.tinuade.learningapp.views.fragments.subjectdetails.SubjectDetailsFragment"
+        android:label="fragment_subject_details"
+        tools:layout="@layout/fragment_subject_details">
+        <action
+            android:id="@+id/action_subjectDetailsFragment_to_playLessonFragment"
+            app:destination="@id/playLessonFragment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/slide_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/playLessonFragment"
+        android:name="com.tinuade.learningapp.views.fragments.playvideo.PlayLessonFragment"
+        android:label="fragment_play_lesson"
+        tools:layout="@layout/fragment_play_lesson" />
+</navigation>
