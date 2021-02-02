@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playback"
         app:layout_constraintVertical_bias="0.478"
-        app:srcCompat="@drawable/ic_rew" />
+        app:srcCompat="@drawable/exo_icon_rewind" />
 
     <ImageView
         android:id="@+id/exo_ffwd"
@@ -25,7 +25,7 @@
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toEndOf="@+id/playback"
         app:layout_constraintTop_toTopOf="@id/playback"
-        app:srcCompat="@drawable/ic_fwd" />
+        app:srcCompat="@drawable/ic_forward_control" />
 
     <FrameLayout
         android:id="@+id/playback"
@@ -41,7 +41,7 @@
             android:layout_width="65dp"
             android:layout_height="61dp"
             android:contentDescription="@string/exo_controls_play_description"
-            android:src="@drawable/ic_play" />
+            android:src="@drawable/ic_play_control" />
 
         <ImageView
             android:id="@id/exo_pause"

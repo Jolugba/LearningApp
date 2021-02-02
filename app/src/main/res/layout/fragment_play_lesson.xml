@@ -24,7 +24,7 @@
         android:id="@+id/video_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:controller_layout_id="@layout/custom_control"
+        app:controller_layout_id="@layout/exo_player_control_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.45"
         app:resize_mode="fit"
