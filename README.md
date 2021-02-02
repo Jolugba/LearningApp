@@ -23,7 +23,7 @@ Room :for persist the data
 Material Design: for better user Interface
 Coroutines for background work
 
-###TODO
+### TODO
 * UI and  unit testing
 * more code abstration/Robustness
 * CI/CD
