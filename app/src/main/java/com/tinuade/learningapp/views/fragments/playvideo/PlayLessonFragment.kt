@@ -86,11 +86,6 @@ class PlayLessonFragment : Fragment(), Player.EventListener {
             ExoPlayer.STATE_IDLE -> {
             }
             ExoPlayer.STATE_READY -> {
-
-            }
-            ExoPlayer.STATE_BUFFERING -> {
-            }
-            ExoPlayer.STATE_ENDED -> {
                 subjectName?.let {
                     lessonTitle?.let { it1 ->
                         url?.let { it2 ->
@@ -106,6 +101,11 @@ class PlayLessonFragment : Fragment(), Player.EventListener {
                             it
                         )
                     }
+            }
+            ExoPlayer.STATE_BUFFERING -> {
+            }
+            ExoPlayer.STATE_ENDED -> {
+
             }
         }
     }
