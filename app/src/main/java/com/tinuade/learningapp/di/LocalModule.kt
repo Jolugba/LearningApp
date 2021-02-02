@@ -7,6 +7,8 @@ import com.tinuade.learningapp.data.local.dao.ChapterDao
 import com.tinuade.learningapp.data.local.dao.RecentlyWatchedVideosDao
 import com.tinuade.learningapp.data.local.dao.SubjectsDao
 import com.tinuade.learningapp.data.local.dao.VideoLessonsDao
+import com.tinuade.learningapp.repository.RecentlyWatchedRespository
+import com.tinuade.learningapp.repository.Repository
 import com.tinuade.learningapp.utils.AppConstants.DATABASE_NAME
 import dagger.Module
 import dagger.Provides
@@ -57,5 +59,13 @@ class LocalModule {
     @Singleton
     fun provideRecentlyWatchedDao(appDatabase: AppDatabase): RecentlyWatchedVideosDao {
         return appDatabase.recentlyWatchedVideosDao()
+    }
+
+    @Provides
+    @Singleton
+    fun providesRepository(
+        recentlyWatchedDao: RecentlyWatchedVideosDao
+    ): Repository {
+        return RecentlyWatchedRespository(recentlyWatchedDao)
     }
 }

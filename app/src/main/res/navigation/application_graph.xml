@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_dash_board">
         <action
             android:id="@+id/action_dashBoardFragment_to_subjectDetailsFragment"
-            app:destination="@id/subjectDetailsFragment" />
+            app:destination="@id/subjectDetailsFragment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/slide_left" />
     </fragment>
     <fragment
         android:id="@+id/subjectDetailsFragment"
@@ -21,11 +23,13 @@
         tools:layout="@layout/fragment_subject_details">
         <action
             android:id="@+id/action_subjectDetailsFragment_to_playLessonFragment"
-            app:destination="@id/playLessonFragment" />
+            app:destination="@id/playLessonFragment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/slide_left" />
     </fragment>
     <fragment
         android:id="@+id/playLessonFragment"
-        android:name="com.tinuade.learningapp.views.fragments.PlayLessonFragment"
+        android:name="com.tinuade.learningapp.views.fragments.playvideo.PlayLessonFragment"
         android:label="fragment_play_lesson"
         tools:layout="@layout/fragment_play_lesson" />
 </navigation>

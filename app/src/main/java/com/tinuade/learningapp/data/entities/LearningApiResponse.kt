@@ -71,7 +71,7 @@ data class Chapter(
 data class RecentlyWatchedVideos(
     @PrimaryKey
     @SerializedName("chapter_id")
-    val id: Long,
+    val id: Int,
     val mediaUrl: String,
     @SerializedName("name")
     val subjectName: String,

@@ -4,7 +4,9 @@ import com.tinuade.learningapp.data.local.dao.RecentlyWatchedVideosDao
 import com.tinuade.learningapp.data.local.dao.SubjectsDao
 import com.tinuade.learningapp.data.remote.LearningRemoteDataSource
 import com.tinuade.learningapp.repository.RecentlyWatchedRespository
+import com.tinuade.learningapp.repository.Repository
 import com.tinuade.learningapp.repository.SubjectsRepository
+import com.tinuade.learningapp.views.fragments.playvideo.PlayVideoViewModel
 import com.tinuade.learningapp.views.fragments.subject.SubjectViewModel
 import dagger.Module
 import dagger.Provides
@@ -39,5 +41,14 @@ class RepositoryModule {
         recentlyWatchedRespository: RecentlyWatchedRespository
     ): SubjectViewModel {
         return SubjectViewModel(subjectsRepository, recentlyWatchedRespository)
+    }
+
+
+    @Provides
+    @ViewModelScoped
+    fun providePlayVideoViewModel(
+        repository: Repository
+    ): PlayVideoViewModel {
+        return PlayVideoViewModel(repository)
     }
 }

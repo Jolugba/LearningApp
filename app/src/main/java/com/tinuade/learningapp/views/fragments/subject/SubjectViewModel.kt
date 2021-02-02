@@ -22,7 +22,7 @@ class SubjectViewModel @ViewModelInject constructor(
 
     fun buttonBehaviour(text: String) {
         when (text) {
-            "VIEW ALL" -> {
+            " View all" -> {
                 buttonText.value = "VIEW LESS"
             }
             "VIEW LESS" -> {
