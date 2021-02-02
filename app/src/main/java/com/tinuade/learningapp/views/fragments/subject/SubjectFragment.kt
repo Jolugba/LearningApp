@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.tinuade.learningapp.R
 import com.tinuade.learningapp.data.entities.Subject
 import com.tinuade.learningapp.utils.AppConstants.SUBJECT
@@ -84,12 +85,15 @@ class SubjectFragment : Fragment(), SubjectsAdapter.SubjectClickedListener {
 
 
         subjectViewModel.recentWatchVideos.observe(viewLifecycleOwner, Observer {
-            if (it.isNotEmpty()) {
+            if (it.isNullOrEmpty()) {
                 recentEmptyStateText.show()
                 viewAllView.hide()
+            } else {
+                recentEmptyStateText.hide()
+                viewAllView.show()
+                recentViewAdapter.setListItems(it)
+                setUpRecentlyWatchedVideos()
             }
-
-            recentViewAdapter.setListItems(it)
         })
 
         subjectViewModel._buttonText.observe(viewLifecycleOwner, Observer {
@@ -108,7 +112,14 @@ class SubjectFragment : Fragment(), SubjectsAdapter.SubjectClickedListener {
         )
     }
 
-
+    fun setUpRecentlyWatchedVideos() {
+        recentViewAdapter = RecentlyWatchedAdapter()
+        recentlyWatchedVideoRecyclerView.layoutManager = LinearLayoutManager(
+            requireContext(),
+            LinearLayoutManager.VERTICAL, false
+        )
+        recentlyWatchedVideoRecyclerView.adapter = recentViewAdapter
+    }
 
 
 }

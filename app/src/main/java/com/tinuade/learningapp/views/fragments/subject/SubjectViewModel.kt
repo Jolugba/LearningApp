@@ -19,6 +19,13 @@ class SubjectViewModel @ViewModelInject constructor(
 
     val subject = repository.getSubjects()
 
+    val recentWatchVideos = _buttonText.switchMap {
+        when (it) {
+            "VIEW ALL" -> recentlyWatchedRespository.getRecentWatchedVideo(2)
+            else -> recentlyWatchedRespository.getRecentWatchedVideo(20)
+        }
+    }
+
 
     fun buttonBehaviour(text: String) {
         when (text) {
@@ -31,11 +38,5 @@ class SubjectViewModel @ViewModelInject constructor(
         }
     }
 
-    val recentWatchVideos = _buttonText.switchMap {
-        when (it) {
-            "VIEW ALL" -> recentlyWatchedRespository.getRecentWatchedVideo(2)
-            else -> recentlyWatchedRespository.getRecentWatchedVideo(20)
-        }
-    }
 
 }

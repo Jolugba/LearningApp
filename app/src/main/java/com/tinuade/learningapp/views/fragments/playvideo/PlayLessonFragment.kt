@@ -2,6 +2,7 @@ package com.tinuade.learningapp.views.fragments.playvideo
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,6 +50,7 @@ class PlayLessonFragment : Fragment(), Player.EventListener {
                 url = lessonItem.media_url
                 subjectName = lessonItem.name
                 id = lessonItem.id
+                Log.d("tag", lessonItem.name + lessonItem.chapter_id + lessonItem.subject_id)
 
                 lessonSubject.text = subjectName
 
@@ -86,6 +88,11 @@ class PlayLessonFragment : Fragment(), Player.EventListener {
             ExoPlayer.STATE_IDLE -> {
             }
             ExoPlayer.STATE_READY -> {
+
+            }
+            ExoPlayer.STATE_BUFFERING -> {
+            }
+            ExoPlayer.STATE_ENDED -> {
                 subjectName?.let {
                     lessonTitle?.let { it1 ->
                         url?.let { it2 ->
@@ -101,11 +108,6 @@ class PlayLessonFragment : Fragment(), Player.EventListener {
                             it
                         )
                     }
-            }
-            ExoPlayer.STATE_BUFFERING -> {
-            }
-            ExoPlayer.STATE_ENDED -> {
-
             }
         }
     }

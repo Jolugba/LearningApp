@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playback"
         app:layout_constraintVertical_bias="0.478"
-        app:srcCompat="@drawable/exo_icon_rewind" />
+        app:srcCompat="@drawable/ic_backward_control" />
 
     <ImageView
         android:id="@+id/exo_ffwd"
